@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebSiteMVC.Models.Product>
+
+@{
+    ViewBag.Title = "ListarProductos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListarProductos</h2>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitsInStock)
+        </td>
+    </tr>
+}
+
+</table>
